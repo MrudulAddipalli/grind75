@@ -24,6 +24,9 @@ class TreeNode {
 //     }
 // };
 
+
+// Explaination - https://www.youtube.com/watch?v=gs2LMfuOR9k
+
 class Solution {
   TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
     TreeNode? current = root;
@@ -33,6 +36,8 @@ class Solution {
       } else if (p.val < current.val && q.val < current.val) {
         current = current.left;
       } else {
+        // means both nodes are in different direction hence current becomes the common root for both the nodes,
+        // hence returning current which points as root of the both the nodes
         return current;
       }
     }
