@@ -20,3 +20,23 @@ class Solution {
     return -1;
   }
 }
+
+
+class Solution2 {
+  int search(List<int> nums, int target) {
+    int len = nums.length;
+    if (len <= 0) return -1;
+    int max = len, min = 0, mid = 0;
+    while (min<max) { // change
+      mid = (min + (max - min)) ~/ 2;
+      if (nums[mid] == target) return mid;
+      if (target < nums[mid]) {
+        max = mid;
+      } else {
+        min = mid + 1; // change
+      }
+    }
+    if (min == max) return min; // change - handling edge case
+    return -1;
+  }
+}
