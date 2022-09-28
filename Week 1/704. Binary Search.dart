@@ -28,6 +28,8 @@ class Solution2 {
     if (len <= 0) return -1;
     int max = len, min = 0, mid = 0;
     while (min<max) { // change
+      // for more performance in c++
+      // mid = min + (max - min) / 2;
       mid = (min + (max - min)) ~/ 2;
       if (nums[mid] == target) return mid;
       if (target < nums[mid]) {
@@ -40,3 +42,5 @@ class Solution2 {
     return -1;
   }
 }
+
+
