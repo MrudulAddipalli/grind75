@@ -53,7 +53,7 @@ class Solution2 {
 }
 
 // Approach 1 Complexity - O(n), with space complexity O(1) since we don't need any new Data Structure
-// kadane algorithm
+// kadane algorithm - https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
 class Solution3 {
   int maxProfit(List<int> prices) {
     int len = prices.length;

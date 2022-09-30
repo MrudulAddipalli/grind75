@@ -8,31 +8,35 @@ class TreeNode {
 class Solution {
   bool isBalanced(TreeNode? root) {
     if (root == null) return false;
-    return isBalanced2(root) > 0;
+    return isBalanced2(root) > 0;// for -1 it will be false hence not balanced
   }
 
   // https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/#
   int isBalanced2(TreeNode? root) {
     if (root == null) return 0;
     int lh = isBalanced2(root.left);
+    // optimisational breakpoint
     if (lh == -1) return -1;
     int rh = isBalanced2(root.right);
+    // optimisational breakpoint
     if (rh == -1) return -1;
 
-    int diff = 0, max = 0;
-    // Math.abs and Mat.max
+    int diff = 0;
+    // Math.abs
     if (lh - rh < 0) {
       diff = rh - lh;
-      max = rh;
     } else {
       diff = lh - rh;
-      max = lh;
     }
     // this is the breakpoint for this logic
-    if (diff > 1)
+    // a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
+    if (diff > 1) {
       return -1;
-    else
-      return max + 1;
+    } else {
+      //  and Math.max
+      int max = lh > rh ? lh : rh;
+      return 1 + max;
+    }
   }
 
   void printTree(TreeNode? root) {
