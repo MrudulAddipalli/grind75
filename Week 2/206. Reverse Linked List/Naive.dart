@@ -1,43 +1,4 @@
-class ListNode {
-  int val;
-  ListNode? next;
-  ListNode(this.val);
-}
-
-class LinkedList {
-  ListNode? node;
-
-  void add(int data) {
-    if (node == null || node?.val == null) {
-      node = ListNode(data);
-      return;
-    } else {
-      // This temp is important to have correct list
-      ListNode? temp = node;
-      while (temp?.next != null) {
-        temp = temp?.next;
-      }
-      temp?.next = ListNode(data);
-    }
-  }
-
-  void log() {
-    if (node == null || node?.val == null) {
-      print("List is empty");
-      return;
-    } else {
-      ListNode? currentNode = node;
-      while (currentNode != null) {
-        print("Element = ${currentNode.val}");
-        currentNode = currentNode.next;
-      }
-    }
-  }
-
-  void copy(ListNode? copy) {
-    node = copy;
-  }
-}
+import '../../helper_data_structures.dart/linked_list_base.dart';
 
 class Solution {
   ListNode? reverseList(ListNode? head) {

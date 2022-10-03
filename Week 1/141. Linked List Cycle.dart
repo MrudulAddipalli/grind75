@@ -1,12 +1,8 @@
 // Runtime: 0 ms, faster than 100.00% of Java online submissions for Linked List Cycle.
 // Memory Usage: 45 MB, less than 83.62% of Java online submissions for Linked List Cycle.
 
-class ListNode {
-  int val;
-  ListNode? next;
-  ListNode(int x) : val = x;
-}
-
+// Floyds Cycle Detection Algorithm 
+import '../helper_data_structures.dart/linked_list_base.dart';
 class Solution {
   bool hasCycle(ListNode? head) {
     ListNode? slow = head, fast = head;
