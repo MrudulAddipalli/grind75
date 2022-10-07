@@ -1,4 +1,4 @@
-import '../helper_data_structures.dart/treenode.dart';
+import '../helper_data_structures.dart/binary_tree.dart';
 
 class Solution {
   bool isSymmetric(TreeNode? root) {

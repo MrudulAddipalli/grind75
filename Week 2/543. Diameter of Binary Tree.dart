@@ -1,4 +1,4 @@
-import '../helper_data_structures.dart/treenode.dart';
+import '../helper_data_structures.dart/binary_tree.dart';
 
 
 // Runtime: 327 ms, faster than 100.00% of Dart online submissions for Diameter of Binary Tree.

@@ -1,13 +1,7 @@
 
 
 // https://www.youtube.com/watch?v=0K0uCMYq5ng
-
-class TreeNode {
-  int val;
-  TreeNode? left;
-  TreeNode? right;
-  TreeNode([this.val = 0, this.left, this.right]);
-}
+import '../helper_data_structures.dart/binary_tree.dart';
 
 class Solution {
   TreeNode? sortedArrayToBST(List<int> nums) {

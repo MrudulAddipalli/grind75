@@ -1,4 +1,4 @@
-import '../helper_data_structures.dart/treenode.dart';
+import '../helper_data_structures.dart/binary_tree.dart';
 
 // Runtime: 293 ms, faster than 100.00% of Dart online submissions for Same Tree.
 // Memory Usage: 142.1 MB, less than 96.55% of Dart online submissions for Same Tree.
