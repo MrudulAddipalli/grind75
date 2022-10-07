@@ -1,25 +1,8 @@
 import '../helper_data_structures.dart/binary_tree.dart';
-class Solution1 {
-  TreeNode? invertTree(TreeNode? root) {
-      TreeNode? mainRoot = root;
-    if(mainRoot != null){
-       if(mainRoot.right != null && mainRoot.left !=null){
-         TreeNode? rightNode =  invertTree(mainRoot.right); 
-         TreeNode? leftNode =  invertTree(mainRoot.left); 
-         if(rightNode!= null && leftNode!=null){
-           int temp = rightNode.val;
-           rightNode.val = leftNode.val;
-           leftNode.val = temp;
-         }
-        }
-    }
-    return mainRoot;
-  }
-}
 
-// here the problem with Solution1 is we are just swaping values of left and right node, 
+// here the problem with Solution1 is we are just swaping values of left and right node,
 // but the ref of left and right node is not updated
-// due to which when parsing it maps to old node, 
+// due to which when parsing it maps to old node,
 // which may have not got swapped because of null child
 class Solution2 {
   TreeNode? invertTree(TreeNode? root) {
@@ -34,7 +17,26 @@ class Solution2 {
   }
 }
 
-void main(){
+class Solution1 {
+  TreeNode? invertTree(TreeNode? root) {
+    TreeNode? temp = root;
+    if (temp != null) {
+      if (temp.right != null && temp.left != null) {
+        TreeNode? rightNode = invertTree(temp.right);
+        TreeNode? leftNode = invertTree(temp.left);
+        if (rightNode != null && leftNode != null) {
+          int temp = rightNode.val;
+          rightNode.val = leftNode.val;
+          leftNode.val = temp;
+        }
+      }
+    }
+    return temp;
+  }
+}
+
+
+void main() {
   TreeNode node = TreeNode(1);
   node.right = TreeNode(2);
   node.right!.right = TreeNode(4);
@@ -42,8 +44,8 @@ void main(){
   node.left = TreeNode(3);
   node.left!.right = TreeNode(6);
   node.left!.left = TreeNode(7);
-  
-  TreeNode? newNode =  Solution2().invertTree(node);
+
+  TreeNode? newNode = Solution2().invertTree(node);
   print("newNode");
   print("Value ${newNode?.val}");
   print("Right ${newNode?.right?.val}");

@@ -12,7 +12,7 @@ class Solution {
     }
     if (max.length != min.length) {
       int diffChars = max.length - min.length;
-      // add preceeding zeros for short num
+      // add preceeding zeros for short num to match string lenght and loop for single string to avoid index issues
       for (i = 0; i < diffChars; i++) {
         min = "0" + min;
       }

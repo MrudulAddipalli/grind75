@@ -60,7 +60,7 @@ class Solution {
       temp.left = TreeNode(val);
     }
 
-    // egde case
+    // temp and curr will update root, hence return root node
     return root;
   }
 
