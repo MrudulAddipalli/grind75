@@ -1,10 +1,4 @@
-class TreeNode {
-    int val;
-    TreeNode? left;
-    TreeNode? right;
-   TreeNode([this.val = 0, this.left, this.right]);
-  }
-
+import '../helper_data_structures.dart/treenode.dart';
 class Solution1 {
   TreeNode? invertTree(TreeNode? root) {
       TreeNode? mainRoot = root;

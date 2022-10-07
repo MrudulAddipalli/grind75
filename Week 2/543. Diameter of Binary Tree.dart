@@ -1,9 +1,5 @@
-class TreeNode {
-  int val;
-  TreeNode? left;
-  TreeNode? right;
-  TreeNode([this.val = 0, this.left, this.right]);
-}
+import '../helper_data_structures.dart/treenode.dart';
+
 
 // Runtime: 327 ms, faster than 100.00% of Dart online submissions for Diameter of Binary Tree.
 // Memory Usage: 144.2 MB, less than 28.57% of Dart online submissions for Diameter of Binary Tree.

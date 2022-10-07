@@ -1,10 +1,4 @@
-class TreeNode {
-  int val;
-  TreeNode? left;
-  TreeNode? right;
-  TreeNode(this.val);
-}
-
+import '../helper_data_structures.dart/treenode.dart';
 
 class Solution {
   int maxDepth(TreeNode? root) {

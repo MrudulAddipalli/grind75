@@ -1,16 +1,9 @@
-
+import '../helper_data_structures.dart/treenode.dart';
 
 // Runtime: 293 ms, faster than 100.00% of Dart online submissions for Same Tree.
 // Memory Usage: 142.1 MB, less than 96.55% of Dart online submissions for Same Tree.
 
-// Solution - https://www.youtube.com/watch?v=vRbbcKXCxOw
-
-class TreeNode {
-  int val;
-  TreeNode? left;
-  TreeNode? right;
-  TreeNode([this.val = 0, this.left, this.right]);
-}
+// Solution - https://www.youtube.com/watch?v=vRbbcKXCxOw 
 
 class Solution {
   bool isSameTree(TreeNode? p, TreeNode? q) {

@@ -1,9 +1,4 @@
-class TreeNode {
-  int val;
-  TreeNode? left;
-  TreeNode? right;
-  TreeNode(this.val);
-}
+import '../helper_data_structures.dart/treenode.dart';
 
 // C++
 
