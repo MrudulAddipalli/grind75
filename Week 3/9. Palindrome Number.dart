@@ -2,7 +2,7 @@
 
 // Old Good Approach - https://www.youtube.com/watch?v=yubRKwixN-U
 // but this will require 2 loops first for getting units place value in div
-// and second for calculation, but this for loop will be equivalent to our loop 0 - len/2
+// and second for calculation, but this for loop will be equivalent to our loop  starting from 0 to len/2
 
 
 
