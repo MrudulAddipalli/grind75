@@ -20,7 +20,11 @@
 //     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
 //         minHeap = []
 //         for x,y in points:
-//             dist = (x ** 2) + ( y ** 2)
+//             // why not doing square root, because it doesnot matter
+//             // sqtr ( 3^2 + 2^2 )  > sqtr ( 3^2 + 2^2 )
+//             //      ( 3^2 + 2^2 )  >      ( 3^2 + 2^2 )
+//             // hence reducing useless calculations
+//             dist = (x ** 2) + ( y ** 2) 
 //             minHeap.append([dist,x,y])
 
 //         heapq.heapify(minHeap)
