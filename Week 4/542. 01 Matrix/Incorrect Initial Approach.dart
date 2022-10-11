@@ -1,5 +1,6 @@
 // getting issue distance mapping and node revisiting 
-
+// for finding nearest 0 for 1 cell, we are revisting same cells again from direction which is increasing 
+// recursive calls, hence causing time limit exceeded or stack overflow
 class Solution {
   bool t1Visited = false,
       t2Visited = false,
