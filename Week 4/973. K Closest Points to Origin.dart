@@ -9,7 +9,6 @@
 // Memory Usage: 20.5 MB, less than 21.29% of Python3 online submissions for K Closest Points to Origin.
 
 
-
 // Heap is nothing but array - https://www.raywenderlich.com/books/data-structures-algorithms-in-dart/v1.0/chapters/13-heaps
 // where elements are added in priority wise
 // if 10 is in the heap and if we add 5, it will check where to add before 10 or after 10, depending on heap type

@@ -49,7 +49,7 @@ class Solution2 {
 
 
 // https://www.youtube.com/watch?v=aayNRwUN3Do
-// Quick Sort
+// Similar To Quick Sort
 
 // Runtime: 524 ms, faster than 73.03% of Dart online submissions for Move Zeroes.
 // Memory Usage: 149.7 MB, less than 85.39% of Dart online submissions for Move Zeroes.

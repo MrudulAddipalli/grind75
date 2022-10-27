@@ -20,7 +20,7 @@ class Solution {
           // top - left
           int top = (i - 1 >= 0) ? mat[i - 1][j] : MAX;
           int left = (j - 1 >= 0) ? mat[i][j - 1] : MAX;
-          mat[i][j] = min(top, left);
+          mat[i][j] = min(top, left) + 1;
         }
       }
     }
@@ -33,7 +33,8 @@ class Solution {
           // bottom - right
           int bottom = (i + 1 < m) ? mat[i + 1][j] : MAX;
           int right = (j + 1 < n) ? mat[i][j + 1] : MAX;
-          mat[i][j] = min(bottom, right);
+          // we need to also consider existing computed distance and than compare with bottom and right values
+          mat[i][j] = min(mat[i][j], min(bottom, right) + 1);
         }
       }
     }

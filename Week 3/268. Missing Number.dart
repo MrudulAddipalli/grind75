@@ -1,7 +1,7 @@
 
 // Other Solutions - https://www.youtube.com/watch?v=WnPLSRLSANE
 
-// Solution 2 - same time and space complexity, [ 1 loop for each sums ]
+// Solution 2 - Time Complexity O(n) and Space Complexity O(1),
 
 // Take sum of all numbers from 0 or n, where is lenght of given array
 // Take sum of given array 
@@ -14,7 +14,7 @@
 // Runtime: 389 ms, faster than 93.94% of Dart online submissions for Missing Number.
 // Memory Usage: 158.3 MB, less than 6.06% of Dart online submissions for Missing Number.
 
-// Time Complexity - O(n) - as required - 2 for loops
+// Time Complexity - O(nlogn) - for sorting
 // Space Complexity - O(1) - as required
 
 class Solution {

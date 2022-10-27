@@ -3,7 +3,7 @@
 // Memory Usage: 155.1 MB, less than 51.92% of Dart online submissions for Squares of a Sorted Array.
 
 
-// Time Complexity - O(nlogn)
+// Time Complexity - O(nlogn) - for sorting
 // Space Complexity - O(1)
 
 class Solution {

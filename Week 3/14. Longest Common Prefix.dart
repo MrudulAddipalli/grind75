@@ -1,3 +1,6 @@
+// Optimised Solution
+// Solution - https://www.youtube.com/watch?v=0sWShKIJoo4
+
 
 // Runtime: 373 ms, faster than 84.80% of Dart online submissions for Longest Common Prefix.
 // Memory Usage: 140.9 MB, less than 96.80% of Dart online submissions for Longest Common Prefix.
