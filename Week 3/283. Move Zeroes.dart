@@ -1,3 +1,48 @@
+
+// Solution - https://www.youtube.com/watch?v=aayNRwUN3Do
+// Similar To Quick Sort
+
+// Runtime: 524 ms, faster than 73.03% of Dart online submissions for Move Zeroes.
+// Memory Usage: 149.7 MB, less than 85.39% of Dart online submissions for Move Zeroes.
+
+// Time Complexity - O(n)
+// Space Complexity - O(1)
+class Solution3 {
+  void moveZeroes(List<int> nums) {
+   int l = 0;
+   for(int r = 0; r< nums.length;r++){
+     if(nums[r] != 0){
+       print("${nums[r]} l = $l, r = $r ");
+       swap(l,r,nums);
+       l++;
+     }
+   }
+   print("Final Nums - $nums");
+ }
+  void swap(int l, int r,List<int> nums){
+    int temp = nums[l];
+    nums[l] = nums[r];
+    nums[r] = temp;
+    print("nums - $nums");
+  }
+}
+
+
+void main() {
+  Solution().moveZeroes([0,1,0,3,12]);
+// 1 l = 0, r = 1 
+// nums - [1, 0, 0, 3, 12]
+// 3 l = 1, r = 3 
+// nums - [1, 3, 0, 0, 12]
+// 12 l = 2, r = 4 
+// nums - [1, 3, 12, 0, 0]
+// Final Nums - [1, 3, 12, 0, 0]
+}
+
+
+
+
+
 // Constraints - Note that you must do this in-place without making a copy of the array.
 
 // Failed for [0,0,1]
@@ -47,36 +92,3 @@ class Solution2 {
   }
 }
 
-
-// https://www.youtube.com/watch?v=aayNRwUN3Do
-// Similar To Quick Sort
-
-// Runtime: 524 ms, faster than 73.03% of Dart online submissions for Move Zeroes.
-// Memory Usage: 149.7 MB, less than 85.39% of Dart online submissions for Move Zeroes.
-
-// Time Complexity - O(n)
-// Space Complexity - O(1)
-class Solution3 {
-  void moveZeroes(List<int> nums) {
-   int l = 0;
-   for(int r = 0; r< nums.length;r++){
-     if(nums[r] != 0){
-       print("${nums[r]} l = $l, r = $r ");
-       swap(l,r,nums);
-       l++;
-     }
-   }
-   print("Final Nums - $nums");
- }
-  void swap(int l, int r,List<int> nums){
-    int temp = nums[l];
-    nums[l] = nums[r];
-    nums[r] = temp;
-    print("nums - $nums");
-  }
-}
-
-
-void main() {
-  Solution().moveZeroes([0,1,0,3,12]);
-}
