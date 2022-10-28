@@ -10,7 +10,7 @@ import '../helper_data_structures.dart/binary_tree.dart';
 class Solution {
   TreeNode? sortedArrayToBST(List<int> nums) {
 
-    // inner helper function
+    // inner inline helper function
     TreeNode? mid(int l, int r) {
       if (l > r) return null;
 
