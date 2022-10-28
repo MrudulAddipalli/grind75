@@ -31,6 +31,7 @@ class Solution2 {
         else if(threeSum < 0) l++;
         // adding the result when threeSum calculates to 0
         else {
+          // means sum is 0
           res.add([ a,nums[l],nums[r] ]);
           // update pointer
           // since first element a is solved we need to move to next element
@@ -41,6 +42,7 @@ class Solution2 {
           // so we are checking is nums[2] == nums[1], means same result we will get
           // hence moving left pointer (l) to next element
           while(l<r && nums[l] == nums[l-1]){
+            // This is optimisation, also this removes duplicate entry in the result
             l++;
           }
         }
