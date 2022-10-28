@@ -3,7 +3,7 @@
 // Runtime: 578 ms, faster than 91.18% of Dart online submissions for Longest Substring Without Repeating Characters.
 // Memory Usage: 143.8 MB, less than 94.54% of Dart online submissions for Longest Substring Without Repeating Characters.
 
-// Time Complexity - O(n), set contains is O(1)
+// Time Complexity - O(n), set.Contains() is O(1) operation
 // Space Complexity - O(n), set for storing characters from string of lenght N 
 class Solution {
   int lengthOfLongestSubstring(String s) {
