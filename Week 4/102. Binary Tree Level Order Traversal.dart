@@ -2,6 +2,9 @@
 // Solution - https://www.youtube.com/watch?v=XZnWETlZZ14
 // Solution - https://www.youtube.com/watch?v=6ZnyEApgFYg
 
+// Runtime: 471 ms, faster than 78.79% of Dart online submissions for Binary Tree Level Order Traversal.
+// Memory Usage: 142.4 MB, less than 93.94% of Dart online submissions for Binary Tree Level Order Traversal.
+
 import '../helper_data_structures.dart/binary_tree.dart';
 
 class Solution {
