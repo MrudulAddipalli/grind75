@@ -1,5 +1,6 @@
 # Solution - https://www.youtube.com/watch?v=mQeF6bN8hMk
-
+# Time Complexity - O(n) = E + V
+# Space Complexity - O(n) [ for map ]
 class Node:
     def __init__(self, val=0, neighbors=None):
         self.val = val
