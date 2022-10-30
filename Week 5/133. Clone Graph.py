@@ -32,5 +32,5 @@ class Solution:
 
             return clone
 
-        # null check for node
+        # null check for node, if null return null as node
         return dfs(node) if node else None

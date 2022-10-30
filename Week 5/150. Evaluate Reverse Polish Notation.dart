@@ -1,5 +1,15 @@
+
+// Runtime: 596 ms, faster than 25.00% of Dart online submissions for Evaluate Reverse Polish Notation.
+// Memory Usage: 149.8 MB, less than 37.50% of Dart online submissions for Evaluate Reverse Polish Notation.
+
+// Time Complexity - O(n)
+// Space Complexity - O(1)
+
+// Same Solution with Stack - https://www.youtube.com/watch?v=iu0082c4HDE
+
 class Solution {
   int evalRPN(List<String> tokens) {
+    if(tokens.isEmpty) return 0;
     int res = 0, i = 0;
     while (i >= 0) {
       print("I is at $i --- ");
@@ -70,7 +80,8 @@ class Solution {
         i++;
       }
     }
-    return res;
+    // at end we are storing res in array itself
+    return int.parse(tokens[0]);
   }
 }
 
