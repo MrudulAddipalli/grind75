@@ -5,6 +5,8 @@
 // Time Complexity - O(amount * coins.lenght)
 // Space Complexity - O(amount) - for dp array
 
+
+// Bottom Up , Memoization, Dynamic Programming
 class Solution {
   int coinChange(List<int> coins, int amount) {
     List<int> dp = [];
