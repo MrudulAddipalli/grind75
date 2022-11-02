@@ -1,3 +1,29 @@
+
+// Approach 1 Complexity - O(n), with space complexity O(1) since we don't need any new Data Structure
+// kadane algorithm - https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
+class Solution3 {
+  int maxProfit(List<int> prices) {
+    int len = prices.length;
+    if (len < 1) return 0;
+
+    int lowestBuy = prices[0];
+    int maxProfit = 0;
+
+    for (int i = 1; i < len; i++) {
+      if (lowestBuy > prices[i]) {
+        lowestBuy = prices[i];
+      }
+      if ((prices[i] - lowestBuy) >= maxProfit) {
+        maxProfit = prices[i] - lowestBuy;
+      }
+    }
+    return maxProfit;
+  }
+}
+
+
+
+
 // Solution 1 --  for [7,1,5,3,6,4] and [7,6,4,3,1]
 
 class Solution {
@@ -49,27 +75,5 @@ class Solution2 {
       }
     }
     return profit;
-  }
-}
-
-// Approach 1 Complexity - O(n), with space complexity O(1) since we don't need any new Data Structure
-// kadane algorithm - https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
-class Solution3 {
-  int maxProfit(List<int> prices) {
-    int len = prices.length;
-    if (len < 1) return 0;
-
-    int lowestBuy = prices[0];
-    int maxProfit = 0;
-
-    for (int i = 1; i < len; i++) {
-      if (lowestBuy > prices[i]) {
-        lowestBuy = prices[i];
-      }
-      if ((prices[i] - lowestBuy) >= maxProfit) {
-        maxProfit = prices[i] - lowestBuy;
-      }
-    }
-    return maxProfit;
   }
 }
