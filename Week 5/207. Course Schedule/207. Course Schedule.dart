@@ -35,6 +35,7 @@ class Solution {
     dfs(int course) {
       if (prerequisiteMap[course] != null) {
         // DFS search breakpoint - no need to check prequisite for current course for alredy visited course
+        //  forming loop
         if (visitedCourses.contains(course)) return false;
 
         // if there is no prerequisites - means course can be completed
