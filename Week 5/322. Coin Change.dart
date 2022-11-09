@@ -2,7 +2,7 @@
 // Runtime: 595 ms, faster than 54.55% of Dart online submissions for Coin Change.
 // Memory Usage: 150.4 MB, less than 54.55% of Dart online submissions for Coin Change.
 
-// Time Complexity - O(amount * coins.lenght)
+// Time Complexity - O(amount * coins.length)
 // Space Complexity - O(amount) - for dp array
 
 // Solution - https://www.youtube.com/watch?v=H9bfqozjoqs
@@ -22,9 +22,13 @@ class Solution {
         }
       }
     }
+
+    // no coin change found
     if(dp[amount] == amount + 1){
       return -1;
     }
+
+    // return no. of coin change found
     return dp[amount];
   }
 
