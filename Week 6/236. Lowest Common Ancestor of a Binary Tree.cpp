@@ -6,6 +6,14 @@
 // Time - O(n) for traversing all nodes
 // Space - O(1)
 
+struct TreeNode
+{
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
 class Solution
 {
 public:
@@ -17,8 +25,17 @@ public:
         TreeNode *left = lowestCommonAncestor(root->left, p, q);
         TreeNode *right = lowestCommonAncestor(root->right, p, q);
 
-        if (left == NULL){ return right; }
-        else if (right == NULL){ return left; }
-        else { return root; }
+        if (left == NULL)
+        {
+            return right;
+        }
+        else if (right == NULL)
+        {
+            return left;
+        }
+        else
+        {
+            return root;
+        }
     }
 };
