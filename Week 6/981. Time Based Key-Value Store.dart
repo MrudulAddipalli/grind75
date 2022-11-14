@@ -1,6 +1,8 @@
 
 // Solution - https://www.youtube.com/watch?v=fu2cD_6E8Hw
 
+// Runtime: 708 ms, faster than 100.00% of Dart online submissions for Time Based Key-Value Store.
+// Memory Usage: 228.5 MB, less than 20.00% of Dart online submissions for Time Based Key-Value Store.
 
 class TimeMap {
   late Map<String, List<Data>> timeMap;
@@ -24,7 +26,8 @@ class TimeMap {
 
   //                   exp - ["   ",    "high",     "high",       "low",     "low"]
 
-  // Time - O(n)
+
+  // Time - O(n).. optimisation O(log n) -- for binary search
   String get(String key, int timestamp) {
     List<Data>? allEntries = timeMap[key];
     if (allEntries == null) return "";
@@ -34,6 +37,10 @@ class TimeMap {
       Data data = allEntries[i];
       if (data.timeStamp <= timestamp) return data.value;
     }
+
+    // optimisation - since the constraint says All the timestamps timestamp of set are strictly increasing.
+    // means all out timestamps will be sorted
+    // we can do binary search which will return result in O(log n) 
 
     return "";
   }
