@@ -4,8 +4,8 @@ import '../helper_data_structures.dart/binary_tree.dart';
 
 // check - 102. Binary Tree Level Order Traversal.dart
 
-// Runtime: 499 ms, faster than 25.00% of Dart online submissions for Binary Tree Right Side View.
-// Memory Usage: 142.8 MB, less than 25.00% of Dart online submissions for Binary Tree Right Side View.
+// Runtime: 299 ms, faster than 100.00% of Dart online submissions for Binary Tree Right Side View.
+// Memory Usage: 156.5 MB, less than 25.00% of Dart online submissions for Binary Tree Right Side View.
 
 // Time - O(n)
 // Space - O(n)
