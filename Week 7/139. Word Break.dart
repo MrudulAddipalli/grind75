@@ -22,6 +22,8 @@
 // Approach - Dynamic Programming, Back Tracking, Caching, Bottom Up Approach 
 class Solution {
   bool wordBreak(String s, List<String> wordDict) {
+
+    // prefilling default data
     List<bool> dp = List.filled(s.length + 1, false);
 
     // when we reach end means we can break the strign hence marking end char as true
@@ -41,7 +43,7 @@ class Solution {
         if (dp[i] == true) { print("Breaking inner for loop since dp[${i}] is true"); break;}
       }
     }
-    return dp[0];
+    return dp[0];// if word break does not happen then false will be returned
   }
 }
 
