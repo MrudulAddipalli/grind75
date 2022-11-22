@@ -2,6 +2,10 @@
 
 // Time - O(MxN)
 // Space - O(1) , not considering result for space or else O(MxN)
+
+// Runtime: 394 ms, faster than 92.86% of Dart online submissions for Spiral Matrix.
+// Memory Usage: 140.4 MB, less than 50.00% of Dart online submissions for Spiral Matrix.
+
 class Solution {
   List<int> spiralOrder(List<List<int>> matrix) {
     List<int> res = [];
