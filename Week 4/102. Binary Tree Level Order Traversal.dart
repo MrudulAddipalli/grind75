@@ -5,6 +5,9 @@
 // Runtime: 471 ms, faster than 78.79% of Dart online submissions for Binary Tree Level Order Traversal.
 // Memory Usage: 142.4 MB, less than 93.94% of Dart online submissions for Binary Tree Level Order Traversal.
 
+// Time - O(n)
+// Space - O(n)
+
 import '../helper_data_structures.dart/binary_tree.dart';
 
 class Solution {
@@ -21,6 +24,8 @@ class Solution {
 
     while (queue.isNotEmpty) {
       // this will give no. of nodes present in current level
+      // not using direct queue.lenght in for loop because we are 
+      // updating queue while for loop is in progress
       int noOfNodesInQueueAsPerCurrentLevel = queue.length;
 
       List<int> nodesInCurrentLevel = [];
