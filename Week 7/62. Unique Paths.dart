@@ -29,3 +29,39 @@ class Solution {
     return bottomRow[0];
   }
 }
+
+
+/// or
+
+// More Optimised with single List
+// def uniquePaths(self, m: int, n: int) -> int:
+//         row = [0] * (n-1) + [1]
+        
+//         for i in range(m):
+//             for j in range(n-2, -1, -1):
+//                 row[j] += row[j+1]
+        
+//         return row[0]
+
+
+/// or
+
+
+// We need to take 6 steps right and 2 down, in various order.
+// That means, a permutation of 2 sets of A == 6 and  B  == 2. 
+// That means:  (A + B) !  /  (A! x B!)
+
+// E.g.   8! / (2! x 6!) = 28.
+
+// This is only possible because of the homogenity of the underlying graph (grid).
+// The problem of high numbers can be addressed by cancelling out the common parts of the factorials. 
+// Then it can be sped up by memoization.
+// Even without that, this is faster than 82 %:
+
+// class Solution {
+//     fun uniquePaths(m: Int, n: Int): Int {
+//         val a = m -1
+//         val b = n-1
+//         return ( fact(a + b) /  fact(a) / fact(b) ).toInt()
+//     }
+// }
