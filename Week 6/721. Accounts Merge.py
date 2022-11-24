@@ -31,7 +31,7 @@ class Solution:
         # using set to avoid loop because at end we have many to many relations for the each email
         seen = set()
 
-        # looping all emails
+        # looping all unique emails
         # looping all keys
         for email in emailToName:
             # not visited
