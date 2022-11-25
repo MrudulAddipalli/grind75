@@ -3,8 +3,8 @@
 
 // Solution - https://www.youtube.com/watch?v=UuiTKBwPgAo
 
-// Runtime: 627 ms, faster than 35.63% of Dart online submissions for Container With Most Water.
-// Memory Usage: 179.5 MB, less than 35.63% of Dart online submissions for Container With Most Water.
+// Runtime: 345 ms, faster than 100.00% of Dart online submissions for Container With Most Water.
+// Memory Usage: 188.7 MB, less than 5.75% of Dart online submissions for Container With Most Water.
 
 class Solution {
   int maxArea(List<int> height) {
