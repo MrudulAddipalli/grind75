@@ -11,6 +11,8 @@
 // Sort both array and check if they are equal
 // but here Time Complexity becomes - O(n logn) 
 
+// Solution with Map and less loops see 1st video solution
+
 class Solution {
   bool isAnagram(String s, String t) {
     int sLen = s.length, lLen = t.length, i;
