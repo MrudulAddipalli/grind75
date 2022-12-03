@@ -13,6 +13,8 @@ class Solution:
         path = set()
 
         def dfs(r, c, i):
+            # we not checking word equality here cause we have a condition { word[i] != board[r][c] } for each char
+            # hence if each character does not match dfs will not reach here
             if i == len(word):
                 return True
             if (r < 0 or c < 0 or r >= ROWS or c >= COLS or word[i] != board[r][c]
