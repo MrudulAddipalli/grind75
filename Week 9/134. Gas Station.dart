@@ -17,42 +17,49 @@
 
 class Solution {
   int canCompleteCircuit(List<int> gas, List<int> cost) {
-    int totalAvailableStations = gas.length;
+    int totalAvailableStations = gas.length,
+        stationsVisited = 0,
+        currentStationIndex = 0,
+        tank = 0,
+        start = 0;
 
-    for (int start = 0; start < totalAvailableStations; start++) {
+    for (start = 0; start < totalAvailableStations; start++) {
       print("\nstarting from station $start");
 
-      int stationsVisited = 0;
-      int currentStationIndex = start;
-      int tank = gas[start];
+      stationsVisited = 0;
+      currentStationIndex = start;
+      tank = gas[start];
 
-      while (stationsVisited < totalAvailableStations) {
+      while (stationsVisited < totalAvailableStations + 1) {
         print("currentStationIndex - $currentStationIndex, initial tank - $tank ");
         print("tank = $tank - ${cost[currentStationIndex]} --- ${tank - cost[currentStationIndex]}");
         // first findind cost to reach next station
         tank = tank - cost[currentStationIndex];
-        
+
         // then checking if cannot reach
         // Main Logic
         if (tank < 0) {
           print("cannot reach next station");
           break;
-        } 
+        }
         // if reaching next station by making entire tank empty, means either car
         // has reached start or in between circuit somewhere in reaching next station
-        // tank was empty 
+        // tank was empty
 
-        // hence also checking if that's the startstation 
+        // hence also checking if that's the startstation
         else if (tank == 0 && stationsVisited == totalAvailableStations - 1) {
           print("Tank Becoming Zero Means We can reach start by doing circuit");
           return start;
         }
 
         // handling index cycle to make car reach all station in circular order
-        if (currentStationIndex + 1 > totalAvailableStations - 1) { currentStationIndex = 0; }
-        else { currentStationIndex++; }
-        
-        // now once car reaches next station with tank >= 0 we fill the tank with gas[i] 
+        if (currentStationIndex + 1 > totalAvailableStations - 1) {
+          currentStationIndex = 0;
+        } else {
+          currentStationIndex++;
+        }
+
+        // now once car reaches next station with tank >= 0 we fill the tank with gas[i]
         print("tank = $tank + ${gas[currentStationIndex]} --- ${tank + gas[currentStationIndex]}");
         tank = tank + gas[currentStationIndex];
 
@@ -60,25 +67,27 @@ class Solution {
         stationsVisited++;
         print("current tank - $tank");
       }
-
+      // Edge Case - if tank < 0 then we break while loop
+      // if tank > 0 means we have completed circuit and need to return recently started circuit index
+      // hence added tank > 0 check to start undex 
+      if(tank > 0){ print("Loop Didn't Return"); return start; }
     }
+        
+    // Edge Case
+    if(tank > 0){ print("Loop Didn't Return"); return start-1; }
     return -1;
   }
 }
 
 void main() {
-  // print("Result - ${Solution().rob([2, 7, 9, 3, 1])}");
-  print("Result - ${Solution().canCompleteCircuit([
-        1,
-        2,
-        3,
-        4,
-        5
-      ], [
-        3,
-        4,
-        5,
-        1,
-        2
-      ])}");
+  // print("Result - ${Solution().canCompleteCircuit(
+  //   [1, 2, 3, 4, 5 ],
+  //   [ 3, 4, 5, 1, 2]
+  // )}");
+  // 3 Answer
+
+  print("Result - ${Solution().canCompleteCircuit(
+    [1,2,3,4,5,5,70],
+    [2,3,4,3,9,6,2]
+  )}");
 }
