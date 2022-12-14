@@ -1,5 +1,8 @@
 // Solution - https://www.youtube.com/watch?v=lJwbPZGo05A
 
+// Time - 100%
+// Space - 100%
+
 // Greedy Approach
 // Time - O(n)
 // Space - O(1)
@@ -17,8 +20,10 @@ class Solution {
       tank += (gas[i] - cost[i]);
       if (tank < 0) {
         tank = 0;
-        start = start + 1;
+        start = i + 1;
       }
+      // Note - here we can check if start if not 0, we can return start
+      // but we are not sure if in between stations we run out of gas due to high cost 
     }
 
     return start;
@@ -28,6 +33,7 @@ class Solution {
 
 
 
+// Time Limit Exceeded
 
 // Brute Force Approach
 // Time - O(n^2)
