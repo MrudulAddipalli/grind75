@@ -1,3 +1,36 @@
+
+
+// Greedy Approach
+class Solution {
+  int sum(List<int> arr) =>
+      arr.fold(0, (previous, current) => previous + current);
+
+  int canCompleteCircuit(List<int> gas, List<int> cost) {
+    if (sum(gas) < sum(cost)) return -1;
+
+    int tank = 0;
+    int start = 0;
+    for (int i = 0; i < gas.length; i++) {
+      tank += (gas[i] - cost[i]);
+      if (tank < 0) {
+        tank = 0;
+        start = start + 1;
+      }
+    }
+
+    return start;
+  }
+}
+
+
+
+
+
+// Brute Force Approach
+// Time - O(n^2)
+// Space - O(1)
+
+
 // Input: gas = [1,2,3,4,5], cost = [3,4,5,1,2]
 // Output: 3
 // Explanation:
@@ -14,8 +47,7 @@
 // 0 - 1 + 5 = 4
 // 4 - 2 + 1 = 3
 // 3 - 3 + 2 = 2
-
-class Solution {
+class Solution2 {
   int canCompleteCircuit(List<int> gas, List<int> cost) {
     int totalAvailableStations = gas.length,
         stationsVisited = 0,
