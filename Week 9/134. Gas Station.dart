@@ -1,6 +1,9 @@
-
+// Solution - https://www.youtube.com/watch?v=lJwbPZGo05A
 
 // Greedy Approach
+// Time - O(n)
+// Space - O(1)
+
 class Solution {
   int sum(List<int> arr) =>
       arr.fold(0, (previous, current) => previous + current);
