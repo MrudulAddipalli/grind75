@@ -4,7 +4,7 @@
 // Runtime: 688 ms, faster than 44.83% of Dart online submissions for Maximum Subarray.
 // Memory Usage: 181 MB, less than 60.35% of Dart online submissions for Maximum Subarray.
 
-// Time Complexity - O(n/2)
+// Time Complexity - O(n)
 // Space Complexity - O(n)
 
 // Kadane's Algorithm
