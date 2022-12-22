@@ -1,8 +1,6 @@
-
 # Solution - https://www.youtube.com/watch?v=s-VkcjHqkGI
 
 from ast import List
-
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
       res = []

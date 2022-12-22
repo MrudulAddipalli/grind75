@@ -1,5 +1,9 @@
 import '../helper_data_structures.dart/linked_list_base.dart';
 
+
+// Solution - https://www.youtube.com/watch?v=XVuQxVej6y8
+
+
 // Approach 1 --> Reverse Linked List, from head of reversed linked list use counter till you reach the specific node
 // from head and remove it, after that continue iteration and reach last node [ which will be our head ]
 
@@ -13,6 +17,7 @@ import '../helper_data_structures.dart/linked_list_base.dart';
 // here when right reached null, our left will point to Nth Element in the LL
 // delete that node at left pointer
 
+// Solution Based On Approach 3
 class Solution {
   ListNode? removeNthFromEnd(ListNode? head, int n) {
     // we added dummy cause we need to place left pointer on N-1 th node
@@ -29,6 +34,7 @@ class Solution {
       n--;
     }
 
+    // Main Algo
     while (left != null && right != null) {
       left = left.next;
       right = right.next;
