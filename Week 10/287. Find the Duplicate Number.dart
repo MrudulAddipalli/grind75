@@ -1,10 +1,10 @@
 // Solution - https://www.youtube.com/watch?v=wjYnzkAhcNk
 
 // Approach 1 --- O(n) - Use HashMap and store value as count of repetation, if key already exist means repeated number found
-// this Approach fails for given constraints - solve the problem without modifying the array nums.
+// this Approach fails for given constraints - only use constant extra space
 
 // Approach 2 --- O(nLogn) - sort the array, traverse and find if nums[i] == nums[i+1] , return nums[i] 
-// this Approach fails for given constraints - only use consta
+// this Approach fails for both given constraints - only use constant extra space and without modifying the array nums.
 
 // Floyd's Cycle Detection Algo
 class Solution {
