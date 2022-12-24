@@ -23,8 +23,8 @@ class Solution {
       ..sort((a, b) {
         int freq1 = repeated[a]!;
         int freq2 = repeated[b]!;
-        if(freq1 == freq2) return b.compareTo(a);
-        return freq1 - freq2;
+        if(freq1 == freq2) return a.compareTo(b);
+        return freq2 - freq1;
       });
 
     // Constraints - Time should be O(nLogk)
@@ -34,7 +34,7 @@ class Solution {
     // and if we use "k" to determin whether to add the word in PQ or not, our Time Complexity Will come down
     // to O(nLogk)
 
-    return res.reversed.toList().sublist(0, k);
+    return res.sublist(0, k);
   }
 }
 void main() {
