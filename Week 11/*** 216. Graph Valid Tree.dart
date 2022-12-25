@@ -9,6 +9,7 @@ class Solution {
     // base case - if nop nodes means it is a valid tree
     if (n <= 0) return true;
 
+    // create adjacency list for each node
     Map<int, List<int>> adjacencyNodes = {};
 
     // Mapping All Nodes with It's Adjacent Nodes
@@ -29,9 +30,15 @@ class Solution {
 
     Set<int> visited = {};
     dfs(int currentNode, int previousNode) {
+      // cycle or loop found
       if (visited.contains(currentNode)) return false;
+
       visited.add(currentNode);
+      
+      // iterate for each adjacent nodes
       for (int allAdjacentNode in adjacencyNodes[currentNode]!) {
+        // skip if current node is same as previous node, as it will not justify for cycle or loop
+        // false positive
         if (allAdjacentNode == previousNode) continue;
         if (dfs(allAdjacentNode, currentNode) == false) return false;
       }
