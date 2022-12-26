@@ -31,12 +31,15 @@ class Solution {
     List<int> output = [];
 
     dfs(int course) {
-      if (cyclingCourses.contains(course)) return false;
 
       // DFS search breakpoint - no need to check prequisite for current course for alredy visited course
       //  forming loop
+      if (cyclingCourses.contains(course)) return false;
+
+      // Optimisation - *
       if (visitedCourses.contains(course)) return true;
 
+      // Optimisation
       // if there is no prerequisites - means course can be completed
       if (prerequisiteMap[course] == []) return true;
 
@@ -62,6 +65,7 @@ class Solution {
       // we added 2 , 3, 2, 0 respectivly in visitedCourses
       // now we are doing dfs on 3, which has prerequisite 2,
       // where we don't need to dfs on 2, since 2 and 3 are already visisted
+      // Optimisation - *
       visitedCourses.add(course);
 
       // taking the course for output
@@ -70,6 +74,7 @@ class Solution {
       // since we return true when no loop found, hence we can make
       // prerequisite for current course to empty list,
       // which optimises for further course DFS check
+      // Optimisation
       prerequisiteMap[course] = [];
 
       return true;
