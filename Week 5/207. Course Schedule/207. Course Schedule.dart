@@ -2,13 +2,13 @@
 // Dart - Time Limit Exceeded
 
 // Time Complexity - O(numCourses + prerequisites)
-// Space Complexity - O(n)
+// Space Complexity - O(numCourses)
 
 // Solution - https://www.youtube.com/watch?v=EgI5nU9etnU
 
 class Solution {
   bool canFinish(int numCourses, List<List<int>> prerequisites) {
-    // Adjustancy List - Map with values as list
+    // Adjacency List - Map with values as list
     Map<int, List<int>> prerequisiteMap = {};
 
     // initialising map for each course
@@ -25,9 +25,8 @@ class Solution {
       int prerequisite = p[1];
       if (prerequisiteMap[course] == null) {
         prerequisiteMap[course] = [];
-      } else {
-        prerequisiteMap[course]!.add(prerequisite);
       }
+      prerequisiteMap[course]!.add(prerequisite);
     }
 
     Set<int> visitedCourses = {};
