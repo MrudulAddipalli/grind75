@@ -27,7 +27,7 @@ class Solution:
           while stack and stack[-1].isdigit():
             k = stack.pop() + k
 
-          # storing updated multiplied string with k
+          # storing updated multiplied string with k [ string converted to int ]
           stack.append(int(k)*subStr)
 
       # stack elements to string convertion

@@ -12,8 +12,11 @@ class Solution3 {
   void rotate(List<int> nums, int k) {
       k=k.remainder(nums.length);
       int r=nums.length-k;
+      // store
       List<int> getRenges=nums.getRange(r,nums.length).toList();
+      // remove
       nums.removeRange(r,nums.length);
+      // inser
       nums.insertAll(0,getRenges);
   }
 }
