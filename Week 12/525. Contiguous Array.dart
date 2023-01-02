@@ -29,3 +29,14 @@ class Solution {
   }
   int max(int a, int b) => a > b ? a : b;
 }
+
+// Arr              0  1  0  1  1  1  0    0
+// Sum = 0,        -1  0 -1  0  1  2  1    0
+// maxx                2  2  4       (4)$ (8)*
+// map[0] = -1      0  /  2  /  4  5  /    /
+
+// return maxx i.e 8
+
+
+// $ --- Max(6-4,4) = 4
+// * --- Max(7+1 = 8,4) = 8
