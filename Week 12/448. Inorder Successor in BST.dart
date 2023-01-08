@@ -14,23 +14,16 @@ class Solution {
   TreeNode? inorderSuccessor(TreeNode? root, TreeNode p) {
     TreeNode? successorNode;
     while (root != null) {
-      // // updating node
-      // if (root.val > p.val) {
-      //   successorNode = root;
-      // }
+      // if question is for inorderPredecessor then use <
+      // updating node
+      if (root.val > p.val) {
+        successorNode = root;
+      }
 
-      // // updating pointers
-      // if (p.val >= root.val) {
-      //   root = root.right;
-      // } else {
-      //   root = root.left;
-      // }
-
-      // or 
+      // updating pointers
       if (p.val >= root.val) {
         root = root.right;
       } else {
-        successorNode = root;
         root = root.left;
       }
     }
