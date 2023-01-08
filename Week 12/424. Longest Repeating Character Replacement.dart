@@ -22,6 +22,7 @@ class Solution {
 
       // window has string where characters that needs to be replaced is more than given K,
       // hence reducing L by 1 to get correct String Window
+      // maxOfMapValues will give max repeated character in the string window r-l+1
       while ((r - l + 1) - maxOfMapValues(count.values) > k) {
         count[s[l]] = (count[s[l]] ?? 0) - 1;
         l++;
