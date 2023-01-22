@@ -1,8 +1,12 @@
 //
 // Question - https://www.lintcode.com/problem/659/
 
-////////      Main Missing Logic - lenght of string can be more 9, in that our logic of adding + 2 will not work
+// Time - O(n)
+// Space - O(n)
 
+/// Main Missing Logic in this solution
+/// lenght of string can be more 9, in that our logic of adding + 2 will not work
+/// 
 class SolutionApproach1 {
   String encode(List<String> strs) {
     String res = "";
