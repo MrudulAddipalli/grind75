@@ -47,24 +47,24 @@ class SolutionBruteForce {
 
 // Solution - https://www.youtube.com/watch?v=ofMqFAFVcKY
 
-class SolutionPrefix {
+class SolutionPreSum {
   int pathSum(TreeNode? root, int targetSum) {
     int count = 0;
-    Map<int, int> prefixSum = {};
+    Map<int, int> preSum = {};
     void dfs(TreeNode? node, int currentSum) {
       if (node == null) return;
       currentSum += node.val;
       if (currentSum == targetSum) count++;
-      // check if prefix sum exists [currentSum - targetSum] or not
-      count += prefixSum[currentSum - targetSum] ?? 0;
-      // since we found the prefix Sum means sum - k exist, i.e for current sum +=node.val
-      // we may have to use it further so update prefixSum cache with current sum
+      // check if pre sum exists [currentSum - targetSum] or not
+      count += preSum[currentSum - targetSum] ?? 0;
+      // since we found the pre Sum means sum - k exist, i.e for current sum +=node.val
+      // we may have to use it further so update preSum cache with current sum
       // update cache - I
-      prefixSum[currentSum] = (prefixSum[currentSum] ?? 0) + 1;
+      preSum[currentSum] = (preSum[currentSum] ?? 0) + 1;
       dfs(node.left, currentSum);
       dfs(node.right, currentSum);
       // update cache - II
-      prefixSum[currentSum] = (prefixSum[currentSum] ?? 0) - 1;
+      preSum[currentSum] = (preSum[currentSum] ?? 0) - 1;
     }
     dfs(root, 0);
     return count;
