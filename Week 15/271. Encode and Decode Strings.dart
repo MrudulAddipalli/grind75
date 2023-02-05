@@ -1,5 +1,6 @@
 //
 // Question - https://www.lintcode.com/problem/659/
+// Solution - https://www.youtube.com/watch?v=B1k_sxOSgv8
 
 // Time - O(n)
 // Space - O(n)
