@@ -23,7 +23,7 @@ class Solution:
           # finding number k which is before "["
           k = ""
           # while stack is not empty and last element of stack is a digit
-          # we may not have digit , e.g a3[b] --- abbb
+          # we may not have digit , e.g a10[b] --- abbbbbbbbbb
           while stack and stack[-1].isdigit():
             k = stack.pop() + k
 
