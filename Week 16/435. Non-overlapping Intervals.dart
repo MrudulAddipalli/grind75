@@ -7,6 +7,11 @@
 // else update curr interval
 // return curr as result
 
+// Time Complexity - O(nlogn) - for sorting
+// Space Complexity - O(1)
+
+// Time - 100%
+// Space - 100%
 class Solution {
   int eraseOverlapIntervals(List<List<int>> intervals) {
     int count = 0;
