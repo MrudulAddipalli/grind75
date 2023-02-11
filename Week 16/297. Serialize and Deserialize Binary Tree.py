@@ -2,8 +2,8 @@
 
 #  Solution - https://www.youtube.com/watch?v=u4JAi2JJhI8
 
-# Time - O(n) 
-# Space - O(n) 
+# Time - O(n)
+# Space - O(n)
 #  n - no. of nodes
 
 # Definition for a binary tree node.
@@ -12,6 +12,7 @@ class TreeNode(object):
         self.val = x
         self.left = None
         self.right = None
+
 
 class Codec:
 
@@ -25,15 +26,14 @@ class Codec:
             res.append(str(node.val))
             dfs(node.left)
             dfs(node.right)
-        
+
         dfs(root)
         return ",".join(res)
-        
 
     def deserialize(self, data):
         nodes = data.split(",")
         # index for array traversal
-        self.i =0
+        self.i = 0
 
         def dfs():
             if nodes[self.i] == "N":
@@ -47,4 +47,3 @@ class Codec:
             return node
 
         return dfs()
-
