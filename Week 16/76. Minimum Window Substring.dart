@@ -13,8 +13,8 @@ class Solution {
   String minWindow(String s, String t) {
     // base case
     if (t.isEmpty) return "";
-    if(t.length > s.length) return "";
-    if(s == t) return s;
+    if (t.length > s.length) return "";
+    if (s == t) return s;
 
     Map<String, int> window = {}, countT = {};
 
@@ -23,7 +23,8 @@ class Solution {
       countT[t[i]] = 1 + (countT[t[i]] ?? 0);
     }
 
-    int need = t.length, have = 0;
+    int need = uniqueCharactersOf(t);
+    int have = 0;
 
     List<int> res = [0, 0];
     // Given Constraints - 10^5 - 100000
@@ -33,15 +34,18 @@ class Solution {
     int left = 0;
     for (int right = 0; right < s.length; right++) {
       String currChar = s[right];
+      //   print("currChar - $currChar");
 
       // keep updating map
       window[currChar] = 1 + (window[currChar] ?? 0);
+      //   print("window[currChar] - ${window[currChar]}");
 
       // if currChar is in t, and repeatation of currChar is same in t and substring from left to right
       // then update have
       if (countT.containsKey(currChar) &&
           window[currChar] == countT[currChar]) {
         have++;
+        // print('have - $have, need - $need window[currChar] - ${window[currChar]}');
       }
 
       // if have and need are same then we need to update res
@@ -77,7 +81,19 @@ class Solution {
     if (resLen == MaxValue) return "";
 
     String resStr = "";
-    try{resStr = s.substring(res[0], res[1] + 1);}catch(e){};
+    try {
+      //   print("left = ${res[0]} right ${res[1]}");
+      resStr = s.substring(res[0], res[1] + 1);
+    } catch (e) {}
+    ;
     return resStr;
+  }
+
+  int uniqueCharactersOf(String s) {
+    Set<String> set = {};
+    for (int i = 0; i < s.length; i++) {
+      set.add(s[i]);
+    }
+    return set.length;
   }
 }
