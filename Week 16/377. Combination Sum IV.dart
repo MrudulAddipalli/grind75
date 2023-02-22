@@ -16,6 +16,7 @@ class Solution1 {
       for (int num in nums) {
         count += helper(remaining - num);
       }
+      // updating cache
       cache[remaining] = count;
       return count;
     }
