@@ -1,3 +1,6 @@
+
+// Solution - https://www.youtube.com/watch?v=081AqOuasw0 Jessica Lin
+
 class Solution {
   int calculate(String s) {
     int sign = 1;
