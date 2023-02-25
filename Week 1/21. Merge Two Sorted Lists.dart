@@ -1,5 +1,9 @@
 import '../helper_data_structures.dart/linked_list_base.dart';
 
+
+// Noob Approach
+
+// Better Approach - Solution - https://www.youtube.com/watch?v=XIdigk956u0
 class Solution {
   ListNode? mergeTwoLists(ListNode? list1, ListNode? list2) {
     List<int> mergedList = [
