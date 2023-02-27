@@ -10,6 +10,9 @@ class Data {
 
 class Solution {
   int largestRectangleArea(List<int> heights) {
+    // edge case
+    heights.add(0);
+
     int maxArea = 0;
     List<Data> stack = [];
 
