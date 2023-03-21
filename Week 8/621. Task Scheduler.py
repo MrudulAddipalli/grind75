@@ -4,7 +4,7 @@
 # Runtime: 873 ms, faster than 68.73% of Python3 online submissions for Task Scheduler.
 # Memory Usage: 14.5 MB, less than 42.15% of Python3 online submissions for Task Scheduler.
 
-# Time - O(n), with heapify() - O(logN), but our tast ranges from A-Z, hence constant time O(26)--- O(n) + O(26) -- O(n)
+# Time - O(n), with heapify() - O(NlogN), but our N ranges from A-Z, hence due to constant time, final time complexity is O(n)
 # Space - O(n)
 
 from ast import List
