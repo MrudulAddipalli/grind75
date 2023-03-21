@@ -1,39 +1,47 @@
+
+
 // Solution - https://www.youtube.com/watch?v=DfljaUwZsOk&t=505s
 
-// Time - O(n)
-// Space - O(n)
+// All Approaches - https://www.youtube.com/watch?v=LiSdD3ljCIE
+
+//// Algo:
+//// Pop front elements if it out of window size
+//// Maintain elements in Desc order - by removing elements in queue whose value is less then current index value
+//// Push element as end of the list
+//// Include maximum of current window - it will always be first element of the queue - why because in step 2 we remove all small values and in step 1 we remove all out of window elements, but only consider it if the window size if proper
+class Pair<T1,T2>{
+  T1 value;
+  T1 index;
+  Pair({required this.value,required this.index,});
+}
 
 class Solution {
   List<int> maxSlidingWindow(List<int> nums, int k) {
     List<int> output = [];
     // queue contains index of numbers from nums list
     // Monotonically Decreasing Queue
-    List<int> queue = [];
-    int left = 0, right = 0;
+    List<Pair<int,int>> queue = [];
+    for(int index = 0; index< nums.length;index++){
 
-    while (right < nums.length) {
-      // if recently added values [ i.e index ] is less then current number [num[right]],
-      // then remove smallest numbers [i.e index] from queue
-      while (queue.isNotEmpty && queue[queue.length - 1] < nums[right]) {
-        queue.removeLast();
-      }
 
-      queue.add(right);
-
-      // remove left index [ first index ] from queue which is out of bound
-      if (left > queue[0]) {
-        // edge case if above while loop was not able to pop from queue due to contraints
-        // then we need to remove it if numbers are not in valid window range
+      // step 1: pop front elements if it out of window size
+      if(queue.isNotEmpty && queue.first.index <= (index-k)){
         queue.removeAt(0);
       }
 
-      // formed window of size k
-      if (right + 1 >= k) {
-        output.add(nums[queue[0]]);
-        left++;
+      // step 2: Maintain elements in Desc order
+      while(queue.isNotEmpty && queue.last.value < nums[index]){
+        queue.removeLast();
       }
 
-      right++;
+      // step 3: Push element as end of the list
+      queue.add(Pair(value:nums[index],index: index));
+
+      // step 4: Include maximum of current window
+      // checking if window size is proper to consider it max element of the current window
+      if(index >= k-1){
+        output.add(queue.first.value);
+      }
     }
     return output;
   }
