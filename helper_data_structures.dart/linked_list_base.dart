@@ -2,6 +2,15 @@ class ListNode {
   int val;
   ListNode? next;
   ListNode(this.val, [this.next]);
+  void printConnectedNodes() {
+    String ll = "";
+    ListNode? currentNode = this;
+      while (currentNode != null) {
+        ll += currentNode.val.toString() + " -> ";
+        currentNode = currentNode.next;
+     }
+    print(ll + "null");
+  }
 }
 
 class LinkedList {
