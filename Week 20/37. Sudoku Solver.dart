@@ -9,7 +9,7 @@ class Solution {
     for (int i = 0; i < 9; i++) {
       for (int j = 0; j < 9; j++) {
         if (board[i][j] == '.') {
-          for (int c = 1; c <= 0; c++) {
+          for (int c = 1; c <= 9; c++) {
             if (isSudokoValidIfWePlace_Char_At_I_J(board, i, j, c.toString())) {
               // placing char
               board[i][j] = c.toString();
