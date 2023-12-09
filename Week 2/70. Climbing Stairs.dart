@@ -25,3 +25,21 @@ class Solution {
 void main() {
   print("Status - ${Solution().climbStairs(5)}");
 }
+
+
+                                                  5
+                                   4                                       3
+                            3           2                             2         1
+                        2      1      1   0                         1   0    1
+                    1      0   1      1                             1        1
+                    0          0      0                             0        0
+
+
+
+generate(n){
+    if(n<0) return 0;
+    if(n == 0) return 1;
+    return generate(n-1) + generate(n-2);
+}
+
+generate(5);

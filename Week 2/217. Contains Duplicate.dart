@@ -4,7 +4,7 @@
 
 // Solution 1
 // loop1 - sort array - O(nlogn)
-// loop2 - check if arr[i] != arr[i+1]
+// loop2 - check if arr[i] == arr[i+1] -> return true
 // Time Complexity - O(nlogn) + O(n) = O(nlogn)
 // Space Complexity - O(1) - for maintaining sum
 // Code Readibilty - Low
