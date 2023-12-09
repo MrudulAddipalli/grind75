@@ -1,3 +1,32 @@
+
+//                                                   5
+//                                    4                                       3
+//                             3           2                             2         1
+//                         2      1      1   0                         1   0    1
+//                     1      0   1      1                             1        1
+//                     0          0      0                             0        0
+
+
+
+// generate(n){
+//     if(n<0) return 0;
+//     if(n == 0) return 1;
+//     return generate(n-1) + generate(n-2);
+// }
+
+// generate(5);
+
+
+// generate(n){
+//     if(n == 1) return 1; 
+//     if(n == 2) return 2; 
+//     int x = climbStairs(n-1);
+//     int y = climbStairs(n-2);
+//     return x + y;
+// }
+
+
+
 // https://www.youtube.com/watch?v=Y0lT9Fck7qI
 
 class Solution {
@@ -26,20 +55,3 @@ void main() {
   print("Status - ${Solution().climbStairs(5)}");
 }
 
-
-                                                  5
-                                   4                                       3
-                            3           2                             2         1
-                        2      1      1   0                         1   0    1
-                    1      0   1      1                             1        1
-                    0          0      0                             0        0
-
-
-
-generate(n){
-    if(n<0) return 0;
-    if(n == 0) return 1;
-    return generate(n-1) + generate(n-2);
-}
-
-generate(5);
